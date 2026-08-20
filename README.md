@@ -1,6 +1,6 @@
 # 📰 Veille Crypto Hebdomadaire
 
-Pipeline automatisé de veille sur les crypto-actifs, filtré selon le programme du cours Master Crypto-actifs (Université Paris 1 Panthéon-Sorbonne).
+Pipeline automatisé de veille sur les crypto-actifs, filtré selon un programme de référence sur les crypto-actifs.
 
 Chaque vendredi soir, le pipeline :
 1. Collecte les articles des 25 flux RSS surveillés

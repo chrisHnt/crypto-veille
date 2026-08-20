@@ -71,7 +71,7 @@ RSS_FEEDS = [
 # ─────────────────────────────────────────────
 
 PROGRAMME_COURS = """
-Cours Master Crypto-actifs — Université Paris 1 Panthéon-Sorbonne
+Programme de référence — Crypto-actifs
 
 Chapitre 1 — Introduction & monnaie
 Fonctions monétaires, limites des monnaies fiduciaires, genèse des crypto-actifs,
@@ -300,7 +300,7 @@ def generate_markdown(articles: list[dict], week_start: str, week_end: str) -> s
     lines = [
         f"# 🗞️ Veille Crypto — Semaine du {week_start} au {week_end}",
         f"",
-        f"> Généré automatiquement le {now} | {len(articles)} articles retenus | Filtré selon le programme Master Crypto-actifs (Paris 1)",
+        f"> Généré automatiquement le {now} | {len(articles)} articles retenus | Filtré selon un programme de référence crypto-actifs",
         f"",
         f"---",
         f"",
