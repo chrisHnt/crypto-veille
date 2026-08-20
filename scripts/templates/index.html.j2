@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veille Crypto — Actualités</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Veille Crypto</h1>
+    <p class="tagline">Actualités crypto expliquées, générées et vérifiées automatiquement chaque semaine.</p>
+  </header>
+  <main>
+    {% for a in articles %}
+    <article class="card">
+      <h2><a href="articles/{{ a.slug }}.html">{{ a.titre }}</a></h2>
+      <p class="meta">{{ a.date }}</p>
+      <p>{{ a.extrait }}&hellip;</p>
+    </article>
+    {% else %}
+    <p>Aucun article pour le moment.</p>
+    {% endfor %}
+  </main>
+  <footer>
+    <p>Génération et vérification automatiques (Mistral + Perplexity).</p>
+  </footer>
+</body>
+</html>

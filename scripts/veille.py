@@ -11,6 +11,8 @@ import httpx
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import blog
+
 # ─────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────
@@ -362,7 +364,7 @@ def main():
     monday     = today - timedelta(days=today.weekday())
     week_start = monday.strftime("%Y-%m-%d")
     week_end   = today.strftime("%Y-%m-%d")
-    filename   = f"Veille-Crypto-{week_start}.md"
+    filename   = f"Veille-Crypto-{today.strftime('%Y-%m-%d')}.md"
 
     print(f"[INFO] Pipeline veille crypto — {week_start} → {week_end}")
 
@@ -382,6 +384,8 @@ def main():
     output_path = OUTPUT_DIR / filename
     output_path.write_text(markdown, encoding="utf-8")
     print(f"[OK] Note générée : {output_path}")
+
+    blog.run(filtered)
 
 
 if __name__ == "__main__":

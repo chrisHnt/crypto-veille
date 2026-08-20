@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ titre }} — Veille Crypto</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="back">&larr; Tous les articles</a>
+  </header>
+  <main>
+    <article>
+      <h1>{{ titre }}</h1>
+      <p class="meta">{{ date }}</p>
+      {{ contenu_html | safe }}
+      <section class="sources">
+        <h2>Sources</h2>
+        <ul>
+          {% for source in sources %}
+          <li><a href="{{ source.link }}" target="_blank" rel="noopener noreferrer">{{ source.source }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <p>Article généré et vérifié automatiquement (Mistral + Perplexity).</p>
+  </footer>
+</body>
+</html>
