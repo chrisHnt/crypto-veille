@@ -362,7 +362,7 @@ def main():
     monday     = today - timedelta(days=today.weekday())
     week_start = monday.strftime("%Y-%m-%d")
     week_end   = today.strftime("%Y-%m-%d")
-    filename   = f"Veille-Crypto-{week_start}.md"
+    filename   = f"Veille-Crypto-{today.strftime('%Y-%m-%d')}.md"
 
     print(f"[INFO] Pipeline veille crypto — {week_start} → {week_end}")
 
