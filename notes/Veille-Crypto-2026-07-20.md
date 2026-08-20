@@ -1,6 +1,6 @@
 # 🗞️ Veille Crypto — Semaine du 2026-07-20 au 2026-07-24
 
-> Généré automatiquement le 2026-07-24 | 35 articles retenus | Filtré selon le programme Master Crypto-actifs (Paris 1)
+> Généré automatiquement le 2026-07-24 | 35 articles retenus | Filtré selon un programme de référence crypto-actifs
 
 ---
 
