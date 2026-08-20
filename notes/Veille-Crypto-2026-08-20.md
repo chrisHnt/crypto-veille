@@ -1,6 +1,6 @@
 # 🗞️ Veille Crypto — Semaine du 2026-08-17 au 2026-08-20
 
-> Généré automatiquement le 2026-08-20 | 35 articles retenus | Filtré selon un programme de référence crypto-actifs
+> Généré automatiquement le 2026-08-20 | 34 articles retenus | Filtré selon un programme de référence crypto-actifs
 
 ---
 
@@ -10,7 +10,7 @@
 - [Ethereum](#ethereum) (1)
 - [Layer 2 / Scalabilité](#layer-2--scalabilite) (1)
 - [DeFi](#defi) (1)
-- [Stablecoins / CBDC](#stablecoins--cbdc) (2)
+- [Stablecoins / CBDC](#stablecoins--cbdc) (1)
 - [Tokenisation / RWA](#tokenisation--rwa) (4)
 - [Régulation](#regulation) (17)
 - [Gouvernance / DAO](#gouvernance--dao) (2)
@@ -25,9 +25,9 @@
 
 **Source :** CoinTelegraph | **Date :** 2026-08-20 | **Chapitre :** Chapitre 3 — Wallets & sécurité
 
-Une campagne de phishing ciblant 885 000 numéros de téléphone a été dévoilée par Rapid7. Les attaquants redirigeaient les victimes vers des sites frauduleux de wallets pour voler leurs crypto-actifs.
+Une campagne de phishing ciblant 885 000 numéros de téléphone a été dévoilée par Rapid7, visant à voler des crypto-actifs en redirigeant les victimes vers des sites frauduleux de wallets. Les attaques exploitent des techniques de social engineering et des faux sites de fournisseurs de wallets.
 
-> 💡 *Intérêt pédagogique :* Exemple concret d'attaque par phishing dans le domaine des crypto-actifs, utile pour illustrer les risques de sécurité liés aux wallets.
+> 💡 *Intérêt pédagogique :* Illustre les risques de sécurité liés aux wallets et aux attaques par phishing, avec des exemples concrets de vecteurs d'attaque et des bonnes pratiques pour les utilisateurs.
 
 ---
 
@@ -35,9 +35,9 @@ Une campagne de phishing ciblant 885 000 numéros de téléphone a été dévoil
 
 **Source :** Decrypt | **Date :** 2026-08-20 | **Chapitre :** Chapitre 6 — DeFi
 
-Dix-sept membres présumés de l'Institut Mabna en Iran ont été inculpés pour une campagne de cybercriminalité impliquant des extorsions en Bitcoin totalisant 6 millions de dollars. Les cibles incluaient des universités, entreprises et agences gouvernementales.
+Dix-sept membres présumés de l'Institut Mabna en Iran sont inculpés pour une campagne de cybercriminalité ayant extorqué 6 millions de dollars en Bitcoin. Ces attaques ciblaient des universités, entreprises et agences gouvernementales à l'échelle mondiale.
 
-> 💡 *Intérêt pédagogique :* Cas d'étude sur les attaques par ransomware et l'utilisation de Bitcoin pour l'extorsion, pertinent pour illustrer les risques de sécurité dans le chapitre sur DeFi et les wallets.
+> 💡 *Intérêt pédagogique :* Cas d'étude sur les attaques par extorsion utilisant des crypto-actifs, illustrant les risques de sécurité et les enjeux de conformité pour les protocoles DeFi.
 
 ---
 
@@ -45,9 +45,9 @@ Dix-sept membres présumés de l'Institut Mabna en Iran ont été inculpés pour
 
 **Source :** Decrypt | **Date :** 2026-08-20 | **Chapitre :** Chapitre 3 — Wallets & sécurité
 
-L'opération StopAndProtect a transformé près de 2 000 sites WordPress piratés en infrastructure criminelle pour diffuser des malwares, voler des fichiers de wallets crypto et déployer des ransomwares.
+Une opération malveillante a compromis près de 2 000 sites WordPress pour en faire une infrastructure criminelle. Ces sites servaient à propager des malwares, voler des fichiers de wallets crypto et déployer des ransomwares.
 
-> 💡 *Intérêt pédagogique :* Exemple concret des risques de sécurité liés aux wallets et aux infrastructures en ligne, utile pour illustrer les attaques et les bonnes pratiques dans le chapitre dédié.
+> 💡 *Intérêt pédagogique :* Exemple concret des risques de sécurité liés aux wallets et aux infrastructures en ligne, utile pour illustrer les attaques et les bonnes pratiques de sécurité dans le chapitre 3.
 
 ---
 
@@ -55,9 +55,9 @@ L'opération StopAndProtect a transformé près de 2 000 sites WordPress piraté
 
 **Source :** Decrypt | **Date :** 2026-08-19 | **Chapitre :** Chapitre 6 — DeFi
 
-Le protocole cross-chain Maya Protocol a été stoppé après qu'un attaquant a exploité six vulnérabilités logicielles pour voler 1,4 million de dollars en Bitcoin et d'autres actifs. L'incident a provoqué une chute brutale du token natif CACAO.
+Le protocole cross-chain *Maya Protocol* a été stoppé après qu'un attaquant a exploité six vulnérabilités logicielles pour voler 1,4 million de dollars en Bitcoin et d'autres actifs, faisant chuter son token natif *CACAO*.
 
-> 💡 *Intérêt pédagogique :* Exemple pédagogique parfait pour illustrer les risques de bugs dans les smart contracts et les protocoles DeFi, ainsi que l'importance des audits de sécurité et des mécanismes de pause (circuit breakers).
+> 💡 *Intérêt pédagogique :* Exemple concret d'une attaque complexe sur un protocole DeFi, idéal pour discuter des risques de sécurité, des audits de smart contracts et des mécanismes de protection (slashing, time-locks).
 
 ---
 
@@ -65,9 +65,9 @@ Le protocole cross-chain Maya Protocol a été stoppé après qu'un attaquant a 
 
 **Source :** Decrypt | **Date :** 2026-08-19 | **Chapitre :** Chapitre 6 — DeFi
 
-Un escroc présumé derrière un Ponzi de 165 millions de dollars, promettant des rendements mensuels de 25%, a été déporté des Fidji vers les États-Unis. Le schéma frauduleux a touché des milliers d'investisseurs sous le nom de 'The Crypto Program'.
+Un escroc présumé derrière un Ponzi de 165 millions de dollars, promettant des rendements mensuels de 25%, a été déporté des Fidji vers les États-Unis. L'affaire met en lumière les risques de fraudes dans l'écosystème crypto.
 
-> 💡 *Intérêt pédagogique :* Exemple concret d'arnaque dans l'écosystème crypto, utile pour illustrer les risques de sécurité et les mécanismes de fraude dans le chapitre DeFi.
+> 💡 *Intérêt pédagogique :* Exemple concret de fraude financière dans les crypto-actifs, utile pour discuter des risques systémiques et des mécanismes de régulation (Chapitre 6 et 5).
 
 ---
 
@@ -77,9 +77,9 @@ Un escroc présumé derrière un Ponzi de 165 millions de dollars, promettant de
 
 **Source :** Ethereum Blog | **Date :** 2026-08-20 | **Chapitre :** Chapitre 4 — Ethereum
 
-L'Ethereum Foundation lance 'better.codes', un défi de vérification formelle pour améliorer la sécurité des hash-based SNARKs. Ce projet utilise des outils comme Lean et un tableau de bord public pour collaborer sur des benchmarks de sécurité vérifiés par machine.
+L'Ethereum Foundation lance *better.codes*, un défi de vérification formelle pour améliorer la sécurité des hash-based SNARKs (preuves zk-SNARKs). Ce projet collaboratif vise à établir des benchmarks de sécurité vérifiés par machine pour renforcer la fiabilité des protocoles zk.
 
-> 💡 *Intérêt pédagogique :* Cet article illustre une avancée technique majeure dans la vérification formelle des smart contracts et zk-proofs, pertinente pour le chapitre Ethereum et les protocoles de sécurité.
+> 💡 *Intérêt pédagogique :* Exemple concret d'avancée technique majeure dans Ethereum (zk-proofs et vérification formelle), pertinent pour illustrer les innovations en cryptographie et sécurité (Chapitre 4).
 
 ---
 
@@ -89,9 +89,9 @@ L'Ethereum Foundation lance 'better.codes', un défi de vérification formelle p
 
 **Source :** CoinTelegraph | **Date :** 2026-08-20 | **Chapitre :** Chapitre 4 — Ethereum
 
-GnosisDAO a approuvé la transition de Gnosis Chain vers une zone économique Ethereum (EEZ), permettant un règlement direct sur Ethereum plutôt qu'avec un ensemble de validateurs indépendant.
+GnosisDAO a approuvé la transition de Gnosis Chain vers une zone économique Ethereum (EEZ), permettant un règlement direct sur Ethereum plutôt qu'avec un ensemble de validateurs indépendant. Cette évolution s'inscrit dans une stratégie de scalabilité et d'intégration accrue avec Ethereum.
 
-> 💡 *Intérêt pédagogique :* Illustre l'évolution des solutions de scalabilité (Layer 2) et leur intégration avec Ethereum, un sujet central du chapitre 4.
+> 💡 *Intérêt pédagogique :* Montre un exemple concret de Layer 2 ou de solution de scalabilité pour Ethereum, avec des implications sur la gouvernance et l'architecture des réseaux.
 
 ---
 
@@ -101,31 +101,21 @@ GnosisDAO a approuvé la transition de Gnosis Chain vers une zone économique Et
 
 **Source :** CoinDesk | **Date :** 2026-08-19 | **Chapitre :** Chapitre 6 — DeFi
 
-Analyse des sources de rendement dans la DeFi, expliquant pourquoi les rendements ont chuté au printemps 2026, avec un focus sur les mécanismes de *yield farming* et les risques associés.
+L'article analyse les sources réelles des rendements en DeFi, expliquant pourquoi les yields ont chuté au printemps 2026. Il aborde les mécanismes de *yield farming*, l'impact des liquidations et la dépendance aux liquidités externes.
 
-> 💡 *Intérêt pédagogique :* Permet d'illustrer concrètement les risques systémiques et les limites des protocoles DeFi, en lien avec les concepts de *Money Legos* et de liquidité.
+> 💡 *Intérêt pédagogique :* Fournit un cas d'étude concret pour illustrer les risques systémiques et les limites des protocoles DeFi, utile pour le chapitre sur les risques et la gouvernance.
 
 ---
 
 ## Stablecoins / CBDC
 
-### [Elon Musk's X is exploring stablecoins to pay influencers and content providers](https://www.coindesk.com/business/2026/08/20/elon-musk-s-x-is-exploring-stablecoins-to-pay-influencers-and-content-providers)
-
-**Source :** CoinDesk | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
-
-Elon Musk explore l'utilisation de stablecoins pour rémunérer des influenceurs et créateurs de contenu sur la plateforme X (ex-Twitter), illustrant l'adoption des stablecoins dans des cas d'usage concrets.
-
-> 💡 *Intérêt pédagogique :* Exemple d'application réelle des stablecoins en dehors de la finance traditionnelle, pertinent pour le chapitre sur les stablecoins et leur régulation.
-
----
-
 ### [Bitcoin.com integrates UAE-registered US dollar stablecoin into self-custodial wallet](https://cointelegraph.com/news/bitcoincom-integrates-uae-registered-usdu-stablecoin-into-self-custodial-wallet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound)
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Bitcoin.com a intégré USDU, un stablecoin en dollars américains enregistré par la banque centrale des Émirats Arabes Unis, dans son wallet auto-géré. Cette intégration vise à élargir la distribution au-delà des canaux institutionnels.
+Bitcoin.com a intégré USDU, un stablecoin en dollars américains enregistré par la banque centrale des Émirats Arabes Unis (UAE), dans son wallet auto-géré. Cette intégration élargit l'accès à ce stablecoin au-delà des canaux institutionnels.
 
-> 💡 *Intérêt pédagogique :* Exemple concret de stablecoin régulé et de son intégration dans un wallet, utile pour illustrer les cas d'usage des stablecoins dans le chapitre 5.
+> 💡 *Intérêt pédagogique :* Illustre l'émergence de stablecoins régulés dans des juridictions spécifiques et leur intégration dans des infrastructures de wallets, avec des implications pour la tokenisation des actifs et les CBDC.
 
 ---
 
@@ -135,9 +125,9 @@ Bitcoin.com a intégré USDU, un stablecoin en dollars américains enregistré p
 
 **Source :** CoinDesk | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-L'article explique les *tokenized deposits* (dépôts tokenisés), une forme de stablecoins adossés à des dépôts bancaires traditionnels, permettant une interopérabilité entre la finance traditionnelle et la DeFi.
+L'article explique les *tokenized deposits* (dépôts tokenisés), une forme de stablecoins adossés à des dépôts bancaires traditionnels, utilisée pour des paiements ou des services financiers décentralisés. Ces actifs sont de plus en plus adoptés par les institutions financières.
 
-> 💡 *Intérêt pédagogique :* Exemple concret pour illustrer la tokenisation des actifs financiers et son rôle dans l'Institutional DeFi, pertinent pour le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Permet d'aborder un cas concret de tokenisation d'actifs traditionnels, en lien avec les *RWA* (Real World Assets) et les stablecoins, dans le cadre du chapitre sur la tokenisation.
 
 ---
 
@@ -145,9 +135,9 @@ L'article explique les *tokenized deposits* (dépôts tokenisés), une forme de 
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Standard Chartered et HSBC ont réalisé la première transaction en direct sur le registre blockchain de Swift, connectant leurs systèmes de dépôts tokenisés. Cette initiative marque une étape vers des paiements transfrontaliers interopérables et 24/7.
+Standard Chartered et HSBC ont exécuté la première transaction en direct sur le registre blockchain de Swift, connectant leurs systèmes de dépôts tokenisés. Cette initiative vise à faciliter les paiements transfrontaliers 24/7 et l'interopérabilité des actifs tokenisés.
 
-> 💡 *Intérêt pédagogique :* Exemple concret de tokenisation des actifs bancaires et d'interopérabilité entre systèmes financiers traditionnels et blockchain, pertinent pour illustrer les RWA et les CBDC.
+> 💡 *Intérêt pédagogique :* Exemple concret de tokenisation des actifs financiers et d'interopérabilité entre institutions traditionnelles et blockchain, pertinent pour illustrer les RWA (Real World Assets).
 
 ---
 
@@ -155,9 +145,9 @@ Standard Chartered et HSBC ont réalisé la première transaction en direct sur 
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Centrifuge a intégré le réseau de liquidité Symbiotic à trois fonds gérés par Janus Henderson et NYLIM, totalisant 1,6 milliard de dollars. Le réseau Symbiotic offre une liquidité immédiate en USDC pour les détenteurs éligibles.
+Centrifuge intègre le réseau de liquidité Symbiotic pour offrir une liquidité immédiate en USDC à trois fonds gérés par Janus Henderson et NYLIM, totalisant 1,6 milliard de dollars. Cette initiative permet aux investisseurs d'accéder à des actifs réels tokenisés avec une liquidité accrue.
 
-> 💡 *Intérêt pédagogique :* Exemple concret de tokenisation d'actifs réels (RWA) et de liquidité via des protocoles DeFi, pertinent pour illustrer les cas d'usage institutionnels dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Exemple concret de tokenisation d'actifs réels (RWA) et de création de liquidité via des protocoles DeFi, illustrant les concepts du chapitre 5.
 
 ---
 
@@ -165,9 +155,9 @@ Centrifuge a intégré le réseau de liquidité Symbiotic à trois fonds gérés
 
 **Source :** The Block | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Ondo, une entreprise spécialisée dans la tokenisation, compare l'adoption des actifs tokenisés à celle des premiers ETF, soulignant leur potentiel de démocratisation des investissements. La société mise sur l'adoption du Clarity Act pour accélérer son expansion aux États-Unis.
+Ondo, une entreprise spécialisée dans la tokenisation, compare l'évolution des produits tokenisés à celle des premiers ETF, soulignant leur potentiel de démocratisation des actifs financiers. Le passage de la *Clarity Act* aux États-Unis pourrait accélérer cette adoption.
 
-> 💡 *Intérêt pédagogique :* Cet article montre l'évolution de la tokenisation des actifs financiers et son parallèle avec les ETF, un concept clé pour le chapitre sur la tokenisation et les RWA.
+> 💡 *Intérêt pédagogique :* Cet article illustre l'analogie entre tokenisation et ETF, un concept pédagogique fort pour expliquer la tokenisation des actifs réels (RWA) dans le Chapitre 5.
 
 ---
 
@@ -177,9 +167,9 @@ Ondo, une entreprise spécialisée dans la tokenisation, compare l'adoption des 
 
 **Source :** CoinDesk | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Le directeur de la CFTC américaine demande à son équipe de préparer des réglementations sur les crypto-actifs si le *Clarity Act* (projet de loi visant à clarifier le cadre juridique) échoue. Cela pourrait impacter les acteurs du secteur, notamment les protocoles DeFi et les émetteurs de tokens.
+Le directeur de la CFTC américaine demande à son équipe de préparer des réglementations sur les crypto-actifs si le *Clarity Act* (proposition de loi sur la régulation des crypto) échoue. Cela pourrait impacter les acteurs du secteur, notamment les *PSAN* et les projets sous *MiCA*.
 
-> 💡 *Intérêt pédagogique :* Illustre l'importance de la régulation dans l'écosystème crypto et son impact sur les projets, utile pour aborder MiCA et les cadres réglementaires en cours.
+> 💡 *Intérêt pédagogique :* Illustre l'importance des cadres réglementaires pour les crypto-actifs et leur impact sur les acteurs institutionnels, en lien avec les chapitres sur la tokenisation et la régulation.
 
 ---
 
@@ -187,9 +177,9 @@ Le directeur de la CFTC américaine demande à son équipe de préparer des rég
 
 **Source :** CoinDesk | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-BitGo obtient une licence d'actif virtuel en Corée du Sud, devenant la première entreprise crypto mondiale à le faire. Cela renforce la légitimité des acteurs institutionnels dans le secteur.
+*BitGo*, un acteur majeur des wallets et custodial, obtient une licence d'actifs virtuels en Corée du Sud, devenant la première entreprise mondiale à le faire. Cela renforce la légitimité des acteurs institutionnels dans le secteur crypto.
 
-> 💡 *Intérêt pédagogique :* Illustre l'importance des licences et de la conformité réglementaire pour les custodians et acteurs institutionnels, utile pour aborder PSAN/AMF et DLT Pilot Regime.
+> 💡 *Intérêt pédagogique :* Exemple concret de conformité réglementaire pour les acteurs institutionnels, en lien avec les chapitres sur les wallets et la régulation (PSAN, MiCA).
 
 ---
 
@@ -197,9 +187,9 @@ BitGo obtient une licence d'actif virtuel en Corée du Sud, devenant la premièr
 
 **Source :** CoinDesk | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-L'administration Trump pousse pour l'adoption du *Clarity Act*, une loi visant à clarifier le cadre réglementaire des crypto-actifs aux États-Unis, avec un focus sur les stablecoins et les exchanges décentralisés comme Hyperliquid.
+Le projet de loi *Clarity Act* aux États-Unis vise à clarifier le cadre réglementaire des crypto-actifs, avec un soutien bipartisan. Il pourrait faciliter l'adoption institutionnelle et l'innovation, notamment pour les exchanges et les protocoles DeFi.
 
-> 💡 *Intérêt pédagogique :* Illustre l'évolution réglementaire majeure aux États-Unis et son impact potentiel sur les projets DeFi et les stablecoins, en lien avec le cadre MiCA européen.
+> 💡 *Intérêt pédagogique :* Illustre l'évolution de la régulation américaine (MiCA-like) et son impact sur les acteurs du marché, utile pour discuter des enjeux juridiques dans le chapitre sur la tokenisation.
 
 ---
 
@@ -207,9 +197,9 @@ L'administration Trump pousse pour l'adoption du *Clarity Act*, une loi visant �
 
 **Source :** CoinDesk | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Les acteurs majeurs comme Coinbase et Circle voient leurs actions monter après l'optimisme autour du *Clarity Act*, une proposition de loi visant à encadrer les crypto-actifs aux États-Unis.
+Les acteurs majeurs comme Coinbase, Circle et Bullish voient leur valorisation augmenter en anticipation de l'adoption du *Clarity Act*, qui pourrait renforcer la légitimité des crypto-actifs aux États-Unis.
 
-> 💡 *Intérêt pédagogique :* Montre l'impact des avancées réglementaires sur les acteurs institutionnels et les marchés, utile pour discuter des enjeux de conformité dans le cours.
+> 💡 *Intérêt pédagogique :* Montre l'impact concret d'une régulation sur les entreprises du secteur, pertinent pour discuter des *utility tokens* et de l'adoption institutionnelle.
 
 ---
 
@@ -217,9 +207,9 @@ Les acteurs majeurs comme Coinbase et Circle voient leurs actions monter après 
 
 **Source :** CoinTelegraph | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-La réglementation MiCA en Europe pousse à l'exclusion de l'USDT des plateformes régulées, mais la demande mondiale pour Tether reste élevée. Cet article illustre l'impact concret de MiCA sur les stablecoins et les défis de conformité pour les acteurs du marché.
+MiCA impose des restrictions sur l'USDT en Europe, entraînant son retrait des plateformes régulées, mais sans impact visible sur la demande mondiale. Cet article illustre l'application concrète du cadre réglementaire MiCA sur les stablecoins, notamment les ART (Asset-Referenced Tokens).
 
-> 💡 *Intérêt pédagogique :* Permet d'aborder l'application pratique de MiCA et ses conséquences sur les stablecoins, un sujet clé du chapitre 5.
+> 💡 *Intérêt pédagogique :* Permet d'aborder les implications pratiques de MiCA sur les stablecoins et leur classification, en lien avec les exigences de transparence et de conformité pour les émetteurs.
 
 ---
 
@@ -227,9 +217,9 @@ La réglementation MiCA en Europe pousse à l'exclusion de l'USDT des plateforme
 
 **Source :** CoinTelegraph | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-BitGo Korea a obtenu l'enregistrement VASP pour la garde institutionnelle de crypto-actifs, deux jours avant l'entrée en vigueur de nouvelles exigences réglementaires plus strictes en Corée du Sud.
+BitGo Korea a obtenu l'enregistrement VASP (Virtual Asset Service Provider) pour la conservation institutionnelle de crypto-actifs, deux jours avant l'entrée en vigueur de nouvelles exigences réglementaires plus strictes en Corée du Sud.
 
-> 💡 *Intérêt pédagogique :* Exemple concret de conformité réglementaire pour les acteurs institutionnels, pertinent pour le chapitre sur la tokenisation et la régulation.
+> 💡 *Intérêt pédagogique :* Illustre l'importance de la conformité réglementaire pour les acteurs institutionnels et les exigences en matière de conservation (custody) dans un cadre juridique évolutif.
 
 ---
 
@@ -237,9 +227,9 @@ BitGo Korea a obtenu l'enregistrement VASP pour la garde institutionnelle de cry
 
 **Source :** CoinTelegraph | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Le sénateur Ruben Gallego met en garde contre une adoption précipitée du projet de loi CLARITY Act, soulignant l'absence de retours détaillés de la Maison Blanche avant un vote prévu en septembre.
+Le sénateur Ruben Gallego met en garde contre une adoption précipitée du projet de loi CLARITY Act, soulignant l'absence de retours détaillés de la Maison Blanche et les risques de retard législatif. Ce projet vise à clarifier le cadre réglementaire des crypto-actifs aux États-Unis.
 
-> 💡 *Intérêt pédagogique :* Illustre les enjeux de la régulation aux États-Unis et les débats autour des projets de loi crypto, un sujet clé pour le chapitre 5.
+> 💡 *Intérêt pédagogique :* Permet de discuter des enjeux de la régulation crypto aux États-Unis, des processus législatifs et des défis politiques liés à l'adoption de lois comme le CLARITY Act.
 
 ---
 
@@ -247,9 +237,9 @@ Le sénateur Ruben Gallego met en garde contre une adoption précipitée du proj
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Donald Trump a appelé à l'adoption du projet de loi CLARITY Act, soulignant l'importance de maintenir l'avance des États-Unis sur la Chine dans le domaine des crypto-actifs.
+Donald Trump a appelé à l'adoption du projet de loi CLARITY Act, soulignant la nécessité pour les États-Unis de rester compétitifs face à la Chine dans le domaine des crypto-actifs. Ce projet vise à structurer le marché crypto américain.
 
-> 💡 *Intérêt pédagogique :* Illustre l'importance géopolitique de la régulation crypto et les débats autour des projets de loi aux États-Unis, un sujet pertinent pour le chapitre 5.
+> 💡 *Intérêt pédagogique :* Permet d'aborder les enjeux géopolitiques et stratégiques de la régulation crypto, ainsi que les motivations politiques derrière des projets de loi comme le CLARITY Act.
 
 ---
 
@@ -259,7 +249,7 @@ Donald Trump a appelé à l'adoption du projet de loi CLARITY Act, soulignant l'
 
 Le régulateur bancaire américain (OCC) annonce la publication des règles finales du projet GENIUS d'ici novembre 2026, visant à encadrer les stablecoins avant leur entrée en vigueur en janvier 2027. Ces règles s'appuient sur un projet de 376 pages publié en février pour recueillir les commentaires du public.
 
-> 💡 *Intérêt pédagogique :* Illustre l'évolution réglementaire des stablecoins aux États-Unis, utile pour aborder le cadre MiCA et les enjeux de régulation dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Illustre l'évolution réglementaire des stablecoins aux États-Unis, en lien avec le cadre MiCA européen et les enjeux de tokenisation des actifs financiers.
 
 ---
 
@@ -267,9 +257,9 @@ Le régulateur bancaire américain (OCC) annonce la publication des règles fina
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Le régulateur américain des matières premières (CFTC) a imposé une interdiction de trading de 5 ans à d'anciens dirigeants d'Alameda et FTX, dans le cadre d'un accord de 12,7 milliards de dollars en août 2024 pour désistement et restitution.
+Le régulateur américain des matières premières (CFTC) impose une interdiction de trading de 5 ans à d'anciens dirigeants d'Alameda et FTX, dans le cadre d'un accord de 12,7 milliards de dollars en restitution et désappropriation. Cet accord met fin à une enquête sur des pratiques frauduleuses.
 
-> 💡 *Intérêt pédagogique :* Cas d'étude sur les conséquences réglementaires des scandales crypto, utile pour discuter des risques juridiques et de la gouvernance dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Cas d'étude sur les conséquences réglementaires et juridiques des scandales crypto, utile pour aborder la gouvernance et la conformité dans le chapitre sur la tokenisation.
 
 ---
 
@@ -277,9 +267,9 @@ Le régulateur américain des matières premières (CFTC) a imposé une interdic
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Injective a obtenu l'enregistrement de la SEC en tant qu'agent de transfert pour son entité institutionnelle, lui permettant de tenir les registres de propriété des titres tokenisés. Cette avancée renforce l'infrastructure de marché régulée pour les actifs tokenisés.
+Injective obtient l'enregistrement auprès de la SEC en tant qu'agent de transfert pour son entité institutionnelle, lui permettant de tenir les registres de propriété des titres tokenisés. Cette étape renforce l'infrastructure réglementée pour les actifs tokenisés.
 
-> 💡 *Intérêt pédagogique :* Exemple d'adoption des normes réglementaires pour les actifs tokenisés, pertinent pour aborder les PSAN/AMF et le cadre MiCA dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Exemple d'adoption des normes réglementaires américaines pour les titres tokenisés, illustrant l'évolution des infrastructures de marché dans le cadre de la tokenisation.
 
 ---
 
@@ -287,9 +277,9 @@ Injective a obtenu l'enregistrement de la SEC en tant qu'agent de transfert pour
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-La commissaire de la SEC, Hester Peirce, qualifie de 'progrès important' une proposition réglementaire de la SEC, publiée après l'échec du projet de loi CLARITY Act au Sénat. Elle critique les règles crypto 'inappropriées' actuelles.
+La commissaire de la SEC, Hester Peirce, qualifie de 'progrès important' une proposition réglementaire de la SEC, publiée après l'échec du projet de loi CLARITY Act au Sénat. Cette proposition vise à moderniser le cadre réglementaire des crypto-actifs aux États-Unis.
 
-> 💡 *Intérêt pédagogique :* Illustre les débats réglementaires aux États-Unis et l'évolution des cadres juridiques pour les crypto-actifs, utile pour discuter des enjeux de régulation dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Analyse des dynamiques réglementaires américaines, utile pour comparer avec les cadres européens (MiCA) et discuter des enjeux de gouvernance dans le chapitre sur la tokenisation.
 
 ---
 
@@ -297,9 +287,9 @@ La commissaire de la SEC, Hester Peirce, qualifie de 'progrès important' une pr
 
 **Source :** Decrypt | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Le président de la CFTC indique que l'organisme prépare un cadre réglementaire pour les crypto-actifs si le Congrès ne parvient pas à adopter le projet de loi CLARITY Act. Une structure de marché crypto est déjà en exploration.
+Le président de la CFTC indique que l'organisme prépare un cadre réglementaire pour les crypto-actifs si le Congrès ne parvient pas à adopter le projet de loi CLARITY Act. Cette initiative vise à structurer le marché crypto américain en l'absence de législation claire.
 
-> 💡 *Intérêt pédagogique :* Montre l'anticipation réglementaire aux États-Unis et les enjeux de gouvernance, utile pour discuter des cadres juridiques dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Illustre les efforts réglementaires aux États-Unis pour encadrer les crypto-actifs, utile pour discuter des différences entre approches américaines et européennes (MiCA).
 
 ---
 
@@ -307,9 +297,9 @@ Le président de la CFTC indique que l'organisme prépare un cadre réglementair
 
 **Source :** Decrypt | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Le régulateur bancaire américain (OCC) accélère la finalisation des règles pour les stablecoins via le projet de loi GENIUS Act, avec une deadline fixée à janvier 2027. Ces règles visent à encadrer les stablecoins émis par les banques et institutions financières.
+Le régulateur bancaire américain (OCC) accélère la finalisation des règles du *GENIUS Act* sur les stablecoins, avec une échéance fixée à janvier 2027 pour respecter un délai statutaire après un précédent report en juillet.
 
-> 💡 *Intérêt pédagogique :* Permet d'actualiser les connaissances sur le cadre réglementaire des stablecoins (MiCA, PSAN, etc.) et son évolution aux États-Unis, crucial pour comprendre l'écosystème institutionnel.
+> 💡 *Intérêt pédagogique :* Montre l'évolution réglementaire majeure aux États-Unis sur les stablecoins, pertinente pour discuter du cadre MiCA en Europe et des enjeux de régulation des crypto-actifs.
 
 ---
 
@@ -317,9 +307,9 @@ Le régulateur bancaire américain (OCC) accélère la finalisation des règles 
 
 **Source :** Decrypt | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-L'administration Trump pousse pour une version 'équitable' du Clarity Act, un projet de loi visant à clarifier le cadre réglementaire des crypto-actifs aux États-Unis. Cette initiative s'inscrit dans une volonté de favoriser l'innovation tout en encadrant le secteur.
+L'administration Trump pousse pour une version 'équitable' du *Clarity Act*, un cadre réglementaire pour les crypto-actifs, lors d'une réunion à la Maison Blanche, tout en évoquant l'intégration de Hyperliquid aux États-Unis sous un cadre conforme.
 
-> 💡 *Intérêt pédagogique :* Montre l'évolution des politiques américaines en matière de crypto, complémentaire aux réglementations européennes (MiCA) et françaises (PSAN), utile pour discuter des enjeux de gouvernance et de conformité.
+> 💡 *Intérêt pédagogique :* Illustre les dynamiques politiques et réglementaires autour des crypto-actifs aux États-Unis, utile pour comparer avec les approches européennes (MiCA) et discuter des enjeux de gouvernance.
 
 ---
 
@@ -327,9 +317,9 @@ L'administration Trump pousse pour une version 'équitable' du Clarity Act, un p
 
 **Source :** Decrypt | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-La SEC américaine propose des règles clarifiant le cadre réglementaire pour les levées de fonds en crypto-actifs (ICO), ce qui pourrait stimuler l'innovation dans le token fundraising aux États-Unis. Ces règles visent à apporter une sécurité juridique aux émetteurs et investisseurs.
+La SEC américaine propose des règles clarifiant le cadre réglementaire pour les levées de fonds en crypto-actifs (ICO), ce qui pourrait stimuler l'innovation dans le token fundraising aux États-Unis. Ces règles visent à encadrer les offres de tokens comme des titres financiers ou des utilitaires.
 
-> 💡 *Intérêt pédagogique :* Cet article illustre l'évolution réglementaire majeure aux États-Unis, pertinente pour discuter des cadres MiCA et PSAN/AMF dans le chapitre sur la tokenisation.
+> 💡 *Intérêt pédagogique :* Cet article illustre l'impact des évolutions réglementaires (comme MiCA en Europe) sur la tokenisation et les levées de fonds, un sujet clé du Chapitre 5.
 
 ---
 
@@ -337,9 +327,9 @@ La SEC américaine propose des règles clarifiant le cadre réglementaire pour l
 
 **Source :** The Defiant | **Date :** 2026-08-20 | **Chapitre :** Chapitre 5 — Tokenisation
 
-Le président Trump annonce que la CFTC travaille à l'intégration de Hyperliquid, une plateforme de futures perpétuels géobloquée, aux États-Unis de manière conforme. Cette initiative vise à attirer des acteurs institutionnels dans le cadre réglementaire américain.
+Le président Trump annonce que la CFTC travaille à l'intégration de *Hyperliquid*, une plateforme de futures perpétuels géobloquée, aux États-Unis dans un cadre réglementaire compliant. Cette initiative vise à attirer les acteurs DeFi institutionnels.
 
-> 💡 *Intérêt pédagogique :* Cet article montre une évolution réglementaire majeure pour les plateformes de trading décentralisées, pertinente pour discuter des cadres MiCA et des régulations institutionnelles dans le chapitre Tokenisation.
+> 💡 *Intérêt pédagogique :* Cet article montre l'évolution de la régulation des produits dérivés crypto aux États-Unis, un sujet lié à la tokenisation et à l'institutionnalisation des crypto-actifs (Chapitre 5 et 6).
 
 ---
 
@@ -349,9 +339,9 @@ Le président Trump annonce que la CFTC travaille à l'intégration de Hyperliqu
 
 **Source :** CoinDesk | **Date :** 2026-08-20 | **Chapitre :** Chapitre 4 — Ethereum
 
-Une équipe financée par l'écosystème *Optimism* a utilisé son pouvoir de vote pour rediriger 49 millions de tokens OP (jeton de gouvernance) loin des utilisateurs, soulevant des questions sur la centralisation et la gouvernance des DAO.
+Une équipe financée par *Optimism* (Layer 2 d'Ethereum) a utilisé son droit de vote pour déplacer 49 millions de tokens *OP* (jeton de gouvernance) au détriment des utilisateurs. Cela soulève des questions sur la centralisation du pouvoir dans les DAO et les protocoles DeFi.
 
-> 💡 *Intérêt pédagogique :* Cas d'étude pour discuter des risques de gouvernance dans les protocoles DeFi et des mécanismes de vote des DAO, utile pour le chapitre Ethereum et DeFi.
+> 💡 *Intérêt pédagogique :* Exemple pédagogique concret pour illustrer les risques de gouvernance dans les protocoles DeFi et les DAO, en lien avec le chapitre sur Ethereum et la gouvernance.
 
 ---
 
@@ -359,9 +349,9 @@ Une équipe financée par l'écosystème *Optimism* a utilisé son pouvoir de vo
 
 **Source :** CoinTelegraph | **Date :** 2026-08-20 | **Chapitre :** Chapitre 4 — Ethereum
 
-Optimism, une solution de *Layer 2* basée sur Ethereum, a redirigé 546,9 millions de tokens OP (prévus pour des *airdrops*) vers un fonds de croissance écosystémique, via un vote de gouvernance.
+La DAO Optimism a voté pour rediriger 546,9M de tokens OP (prévus pour des airdrops) vers un fonds de croissance écosystémique, marquant un changement stratégique vers des partenariats institutionnels et une adoption plus large.
 
-> 💡 *Intérêt pédagogique :* Exemple concret de gouvernance DAO et de gestion des fonds dans un protocole DeFi/Layer 2, utile pour illustrer les mécanismes de *treasury management* et les décisions collectives.
+> 💡 *Intérêt pédagogique :* Exemple pédagogique concret de gouvernance DAO et de redistribution de tokens, illustrant les mécanismes de *tokenomics* et les décisions collectives dans les protocoles Layer 2.
 
 ---
 
@@ -371,9 +361,9 @@ Optimism, une solution de *Layer 2* basée sur Ethereum, a redirigé 546,9 milli
 
 **Source :** Decrypt | **Date :** 2026-08-20 | **Chapitre :** Chapitre 3 — Wallets & sécurité
 
-Des escrocs se font passer pour des services de conformité AML (Anti-Money Laundering) pour inciter les utilisateurs à approuver des transactions frauduleuses et vider leurs wallets. Cette technique exploite la méconnaissance des utilisateurs sur les mécanismes de signature de transactions.
+Des escrocs se font passer pour des services de conformité AML (Anti-Money Laundering) pour tromper les utilisateurs et les inciter à approuver des transactions frauduleuses, mettant ainsi leurs actifs en danger.
 
-> 💡 *Intérêt pédagogique :* Illustre concrètement les risques de phishing et d'ingénierie sociale dans la gestion des wallets, essentiel pour aborder la sécurité des clés privées et des seed phrases.
+> 💡 *Intérêt pédagogique :* Illustre une technique d'attaque courante (phishing/social engineering) et les risques liés à l'approbation de transactions malveillantes, utile pour aborder la sécurité des wallets et la vigilance des utilisateurs.
 
 ---
 
@@ -383,9 +373,9 @@ Des escrocs se font passer pour des services de conformité AML (Anti-Money Laun
 
 **Source :** CoinTelegraph | **Date :** 2026-08-19 | **Chapitre :** Chapitre 5 — Tokenisation
 
-FalconX et Ethena ont lancé une facilité de crédit institutionnelle de 1 milliard de dollars, utilisant les actifs de garantie du stablecoin USDe pour des prêts surcollatéralisés. Cela élargit les sources de rendement d'Ethena au-delà des stratégies de base crypto.
+FalconX et Ethena ont lancé une facilité de crédit institutionnelle de 1 milliard de dollars, intégrant les actifs de garantie du stablecoin USDe pour des prêts surcollatéralisés. Cette initiative vise à diversifier les sources de rendement au-delà des stratégies de base crypto.
 
-> 💡 *Intérêt pédagogique :* Exemple concret d'utilisation institutionnelle des stablecoins et de la DeFi, pertinent pour les chapitres 5 et 6.
+> 💡 *Intérêt pédagogique :* Illustre l'évolution de l'Institutional DeFi et l'utilisation de stablecoins comme USDe dans des mécanismes de prêt institutionnels, avec des implications pour la tokenisation des actifs et la gestion des risques.
 
 ---
 
@@ -394,6 +384,6 @@ FalconX et Ethena ont lancé une facilité de crédit institutionnelle de 1 mill
 - **Période couverte :** 2026-08-17 → 2026-08-20
 - **Sources surveillées :** 25 flux RSS
 - **Articles analysés :** 80 max
-- **Articles retenus :** 35
+- **Articles retenus :** 34
 - **Modèle de filtrage :** Mistral (mistral-small-latest)
 - **Tags Obsidian :** #veille #crypto #master #cours
