@@ -24,7 +24,7 @@ MAX_AGE_DAYS    = 7                         # articles de la semaine écoulée
 MAX_ARTICLES    = 80                        # plafond avant filtrage Mistral
 
 # ─────────────────────────────────────────────
-# SOURCES RSS (25 flux)
+# SOURCES RSS (27 flux)
 # ─────────────────────────────────────────────
 
 RSS_FEEDS = [
@@ -36,6 +36,8 @@ RSS_FEEDS = [
     {"url": "https://www.coinjournal.net/feed/",                         "name": "CoinJournal"},
     {"url": "https://cryptobriefing.com/feed/",                          "name": "Crypto Briefing"},
     {"url": "https://blockworks.co/feed",                                "name": "Blockworks"},
+    {"url": "https://cryptoast.fr/feed/",                                 "name": "Cryptoast"},
+    {"url": "https://journalducoin.com/feed/",                            "name": "Journal du Coin"},
 
     # Technique & protocoles
     {"url": "https://blog.ethereum.org/feed.xml",                        "name": "Ethereum Blog"},

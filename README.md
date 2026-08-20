@@ -3,7 +3,7 @@
 Pipeline automatisé de veille sur les crypto-actifs, filtré selon un programme de référence sur les crypto-actifs.
 
 Chaque vendredi soir, le pipeline :
-1. Collecte les articles des 25 flux RSS surveillés
+1. Collecte les articles des 27 flux RSS surveillés
 2. Filtre et résume en français via l'API Mistral
 3. Génère une note Markdown structurée dans `notes/`
 4. Regroupe les articles retenus par sujet réel, rédige un article de blog explicatif par sujet majeur, le fait vérifier par recherche web live (Perplexity Agent API) avant publication sur `docs/` (GitHub Pages) — voir [Blog public](#blog-public)
@@ -88,9 +88,9 @@ Pipeline par sujet (`scripts/blog.py`) :
 
 Pour ajuster le ton ou la longueur des articles : modifier le prompt dans `write_article()` (`scripts/blog.py`). Pour ajuster le seuil de sélection des sujets : modifier le prompt dans `group_by_story()`.
 
-## Sources surveillées (25 flux RSS)
-CoinDesk, CoinTelegraph, Decrypt, The Block, Blockworks, Ethereum Blog,
-Bitcoin Optech, Vitalik Blog, Trail of Bits, Rekt News, Immunefi,
+## Sources surveillées (27 flux RSS)
+CoinDesk, CoinTelegraph, Decrypt, The Block, Blockworks, Cryptoast, Journal du Coin,
+Ethereum Blog, Bitcoin Optech, Vitalik Blog, Trail of Bits, Rekt News, Immunefi,
 Uniswap Blog, Aave Blog, DeFi Llama, The Defiant, AMF France, ESMA,
 Bitcoin Magazine, a16z Crypto, Gauntlet, Dragonfly Research...
 
