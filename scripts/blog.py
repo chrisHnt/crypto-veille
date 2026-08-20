@@ -24,6 +24,11 @@ from perplexity import Perplexity
 
 MISTRAL_API_KEY    = os.environ["MISTRAL_API_KEY"]
 MISTRAL_MODEL      = "mistral-small-latest"
+# Rédaction sur un modèle plus capable que le filtrage/regroupement : les
+# premiers runs réels ont montré mistral-small inventer des détails précis
+# (sigles, montants, attributions légales) quand on lui demande d'élaborer
+# 500-700 mots à partir de résumés courts. Surcoût négligeable au volume visé.
+MISTRAL_WRITER_MODEL = "mistral-large-latest"
 
 PERPLEXITY_API_KEY = os.environ["PERPLEXITY_API_KEY"]
 # Agent API : Sonar Chat Completions est retiré le 27/09/2026, on utilise donc
@@ -181,7 +186,8 @@ def write_article(story: dict) -> dict | None:
 ---
 Titre : {art['title']}
 Source : {art['source']}
-Résumé : {art['resume_fr']}
+Résumé (analyse) : {art['resume_fr']}
+Extrait brut de la source : {art['summary']}
 URL : {art['link']}
 """
 
@@ -202,7 +208,7 @@ Règles de précision, importantes :
 - Utilise le vocabulaire exact des sources (ex. si une source parle d'un "enregistrement", n'écris pas "licence" ; si elle parle d'une "filiale locale", n'écris pas "l'entreprise" au global).
 - Ne généralise pas au-delà de ce que dit la source (une annonce limitée à des clients institutionnels n'est pas une annonce grand public).
 - N'ajoute aucune conclusion, opinion ou extrapolation ("un pas vers...", "cela illustre la maturité de...") qui ne soit pas explicitement dans les sources.
-- Ne t'appuie QUE sur les informations fournies ci-dessus, n'invente aucun fait, chiffre ou citation.
+- Ne t'appuie QUE sur les informations fournies ci-dessus. Si un chiffre, une date, un montant, un sigle ou une attribution précise n'est pas donné explicitement dans les sources, reste vague ou omets ce détail plutôt que de le déduire ou de l'inventer — une imprécision volontaire est préférable à une fausse précision.
 
 Le contenu doit être au format Markdown simple (titres ##, paragraphes, gras/italique si utile).
 
@@ -220,7 +226,7 @@ Réponds UNIQUEMENT en JSON valide, sans texte avant ou après :
                 "Content-Type": "application/json",
             },
             json={
-                "model": MISTRAL_MODEL,
+                "model": MISTRAL_WRITER_MODEL,
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.3,
                 "max_tokens": 2500,
