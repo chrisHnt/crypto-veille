@@ -2,9 +2,11 @@
 Extension blog public du pipeline de veille crypto.
 
 Part des articles déjà filtrés par veille.py (mêmes appels Mistral, pas de
-duplication), les regroupe par sujet réel, rédige un article explicatif par
-sujet via Mistral, le fait vérifier par recherche web live via l'Agent API
-Perplexity, puis publie (docs/) ou rejette (rejected/ + notification ntfy).
+duplication), les regroupe par sujet réel (plafonné à MAX_ARTICLES_PER_RUN
+sujets les mieux classés), rédige un article explicatif par sujet via
+l'Agent API Perplexity (recherche web dès l'écriture), le fait vérifier par
+un second appel Perplexity indépendant, corrige via Mistral si besoin, puis
+publie (docs/) ou rejette (rejected/ + notification ntfy).
 """
 
 import os
@@ -28,7 +30,7 @@ MISTRAL_MODEL      = "mistral-small-latest"
 # premiers runs réels ont montré mistral-small inventer des détails précis
 # (sigles, montants, attributions légales) quand on lui demande d'élaborer
 # 500-700 mots à partir de résumés courts. Surcoût négligeable au volume visé.
-MISTRAL_WRITER_MODEL = "mistral-large-latest"
+MISTRAL_WRITER_MODEL = "mistral-large-latest"  # utilisé par revise_article()
 
 PERPLEXITY_API_KEY = os.environ["PERPLEXITY_API_KEY"]
 # Agent API : Sonar Chat Completions est retiré le 27/09/2026, on utilise donc
@@ -47,6 +49,10 @@ DOCS_DIR     = Path(os.environ.get("DOCS_DIR", "./docs"))
 REJECTED_DIR = Path(os.environ.get("REJECTED_DIR", "./rejected"))
 
 SEUIL_IMPORTANCE = "majeure"  # sujets "mineure" ignorés pour le blog
+# Plafond dur sur le nombre de sujets traités par run, pour borner le coût
+# même une semaine chargée. Si plus de sujets "majeure" que ce plafond, on
+# ne garde que les mieux classés (voir "priorite" dans group_by_story).
+MAX_ARTICLES_PER_RUN = 3
 
 jinja_env = Environment(
     loader=FileSystemLoader(TEMPLATE_DIR),
@@ -120,9 +126,9 @@ Catégorie : {art['categorie']}
 
 Voici {len(filtered)} articles retenus cette semaine (déjà filtrés pour leur pertinence). Plusieurs peuvent parler du même événement réel (ex. un hack couvert par CoinDesk, The Block et Decrypt) : regroupe-les par sujet.
 
-Pour chaque sujet distinct, indique son importance :
-- "majeure" : mérite un article de blog dédié pour un public généraliste (hack important, régulation majeure, mise à jour technique significative...)
-- "mineure" : trop niche ou peu impactant pour un article grand public autonome
+Pour chaque sujet distinct, indique :
+- "importance" : "majeure" (mérite un article de blog dédié pour un public généraliste — hack important, régulation majeure, mise à jour technique significative...) ou "mineure" (trop niche ou peu impactant pour un article grand public autonome)
+- "priorite" : un entier de 1 à 10 sur l'intérêt/impact pour un lecteur généraliste (10 = à ne surtout pas manquer, 1 = mineur même parmi les sujets "majeure"). Uniquement pour les sujets "majeure".
 
 Réponds UNIQUEMENT en JSON valide, sans texte avant ou après, sous cette forme exacte :
 {{
@@ -130,6 +136,7 @@ Réponds UNIQUEMENT en JSON valide, sans texte avant ou après, sous cette forme
     {{
       "titre_sujet": "Titre court du sujet",
       "importance": "majeure",
+      "priorite": 7,
       "articles": [1, 4]
     }}
   ]
@@ -168,10 +175,17 @@ Réponds UNIQUEMENT en JSON valide, sans texte avant ou après, sous cette forme
             continue
         stories.append({
             "titre_sujet": sujet.get("titre_sujet", "Sans titre"),
+            "priorite": sujet.get("priorite", 0),
             "articles": [filtered[i] for i in indices],
         })
 
     print(f"[INFO] {len(stories)} sujets majeurs identifiés (sur {len(parsed.get('sujets', []))} regroupés)")
+
+    stories.sort(key=lambda s: s["priorite"], reverse=True)
+    if len(stories) > MAX_ARTICLES_PER_RUN:
+        print(f"[INFO] Plafond de {MAX_ARTICLES_PER_RUN} atteint, on ne garde que les mieux classés")
+        stories = stories[:MAX_ARTICLES_PER_RUN]
+
     return stories
 
 
@@ -179,7 +193,29 @@ Réponds UNIQUEMENT en JSON valide, sans texte avant ou après, sous cette forme
 # ÉTAPE 2 : Rédaction de l'article
 # ─────────────────────────────────────────────
 
+WRITE_JSON_SCHEMA = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "article_redige",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "titre": {"type": "string"},
+                "contenu_markdown": {"type": "string"},
+            },
+            "required": ["titre", "contenu_markdown"],
+        },
+    },
+}
+
+
 def write_article(story: dict) -> dict | None:
+    """
+    Rédaction via l'Agent API Perplexity plutôt que Mistral : la recherche
+    web se fait dès l'écriture (grounded dès le départ) plutôt qu'après coup
+    lors de la vérification. Les résumés de story['articles'] servent de
+    pistes de départ, pas de source exclusive.
+    """
     sources_text = ""
     for art in story["articles"]:
         sources_text += f"""
@@ -195,47 +231,33 @@ URL : {art['link']}
 
 Sujet à traiter : {story['titre_sujet']}
 
-Voici les articles sources sur ce sujet :
+Pistes de départ (à vérifier et compléter par ta propre recherche web, ne t'y limite pas) :
 {sources_text}
 
+Utilise ta recherche web pour vérifier et compléter chaque fait précis (chiffres, dates, noms, montants) plutôt que de te fier uniquement aux résumés ci-dessus.
+
 Rédige un article explicatif en français de 500 à 700 mots :
-- Un titre accrocheur mais factuel (pas putaclic, pas de superlatif du type "premier"/"record" sauf si une source l'affirme explicitement)
+- Un titre accrocheur mais factuel (pas putaclic, pas de superlatif du type "premier"/"record" sauf si confirmé par ta recherche)
 - Une intro qui résume ce qui s'est passé
 - Une explication du contexte et des enjeux, accessible à un non-spécialiste (définis les termes techniques la première fois que tu les utilises)
 - Une conclusion qui reste factuelle
 
 Règles de précision, importantes :
-- Utilise le vocabulaire exact des sources (ex. si une source parle d'un "enregistrement", n'écris pas "licence" ; si elle parle d'une "filiale locale", n'écris pas "l'entreprise" au global).
-- Ne généralise pas au-delà de ce que dit la source (une annonce limitée à des clients institutionnels n'est pas une annonce grand public).
-- N'ajoute aucune conclusion, opinion ou extrapolation ("un pas vers...", "cela illustre la maturité de...") qui ne soit pas explicitement dans les sources.
-- Ne t'appuie QUE sur les informations fournies ci-dessus. Si un chiffre, une date, un montant, un sigle ou une attribution précise n'est pas donné explicitement dans les sources, reste vague ou omets ce détail plutôt que de le déduire ou de l'inventer — une imprécision volontaire est préférable à une fausse précision.
+- N'avance aucun chiffre, date, montant, sigle ou attribution précise que ta recherche web ne confirme pas explicitement. En cas de doute, reste vague plutôt que d'inventer.
+- Ne généralise pas au-delà de ce que confirment tes sources (une annonce limitée à des clients institutionnels n'est pas une annonce grand public).
+- N'ajoute aucune conclusion, opinion ou extrapolation ("un pas vers...", "cela illustre la maturité de...") qui ne soit pas explicitement étayée.
 
-Le contenu doit être au format Markdown simple (titres ##, paragraphes, gras/italique si utile).
-
-Réponds UNIQUEMENT en JSON valide, sans texte avant ou après :
-{{
-  "titre": "...",
-  "contenu_markdown": "..."
-}}"""
+Le contenu doit être au format Markdown simple (titres ##, paragraphes, gras/italique si utile)."""
 
     try:
-        response = httpx.post(
-            "https://api.mistral.ai/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {MISTRAL_API_KEY}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": MISTRAL_WRITER_MODEL,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.3,
-                "max_tokens": 2500,
-            },
-            timeout=90,
+        response = perplexity_client.responses.create(
+            preset=PERPLEXITY_PRESET,
+            input=prompt,
+            response_format=WRITE_JSON_SCHEMA,
         )
-        response.raise_for_status()
-        content = _clean_json(response.json()["choices"][0]["message"]["content"])
-        parsed = json.loads(content)
+        if getattr(response, "status", "completed") != "completed":
+            raise RuntimeError(f"statut de réponse inattendu : {response.status}")
+        parsed = json.loads(response.output_text)
         if not parsed.get("titre") or not parsed.get("contenu_markdown"):
             return None
         return parsed
