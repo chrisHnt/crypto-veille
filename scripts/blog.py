@@ -130,6 +130,8 @@ Pour chaque sujet distinct, indique :
 - "importance" : "majeure" (mérite un article de blog dédié pour un public généraliste — hack important, régulation majeure, mise à jour technique significative...) ou "mineure" (trop niche ou peu impactant pour un article grand public autonome)
 - "priorite" : un entier de 1 à 10 sur l'intérêt/impact pour un lecteur généraliste (10 = à ne surtout pas manquer, 1 = mineur même parmi les sujets "majeure"). Uniquement pour les sujets "majeure".
 
+Pour la priorité, privilégie le crypto "pur" (protocoles, hacks/sécurité, DeFi, mises à jour techniques Bitcoin/Ethereum/Layer 2, tokenisation) par rapport aux sujets de pure régulation/législation (lois, agences, textes en discussion) — sauf si la régulation a un impact direct et immédiat sur le marché ou les utilisateurs, pas juste une étape procédurale. Les sources étant majoritairement américaines, ne laisse pas la régulation US dominer artificiellement le classement au détriment de sujets crypto plus intrinsèquement intéressants.
+
 Réponds UNIQUEMENT en JSON valide, sans texte avant ou après, sous cette forme exacte :
 {{
   "sujets": [
