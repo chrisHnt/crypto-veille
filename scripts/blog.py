@@ -244,6 +244,58 @@ Réponds UNIQUEMENT en JSON valide, sans texte avant ou après :
         return None
 
 
+def revise_article(article: dict, verdict: dict) -> dict | None:
+    """
+    Renvoie l'article à Mistral avec les corrections trouvées par Perplexity
+    (qui, elle, a accès au web) : Mistral ne "réessaie" pas en aveugle, il
+    corrige avec des faits déjà vérifiés en main.
+    """
+    problemes_text = "\n".join(f"- {p}" for p in verdict.get("problemes", []))
+
+    prompt = f"""Voici un article que tu as rédigé, avec des corrections factuelles identifiées par une vérification web indépendante :
+
+TITRE ACTUEL : {article['titre']}
+
+CONTENU ACTUEL :
+{article['contenu_markdown']}
+
+Corrections à apporter (informations vérifiées par recherche web) :
+{problemes_text}
+
+Réécris l'article en corrigeant précisément ces points, en utilisant les informations correctes données ci-dessus. Ne réintroduis aucune autre erreur. Si une correction ne te donne pas assez d'information pour être précis sur un détail, reste vague ou supprime ce détail plutôt que d'inventer.
+
+Réponds UNIQUEMENT en JSON valide :
+{{
+  "titre": "...",
+  "contenu_markdown": "..."
+}}"""
+
+    try:
+        response = httpx.post(
+            "https://api.mistral.ai/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {MISTRAL_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": MISTRAL_WRITER_MODEL,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.2,
+                "max_tokens": 2500,
+            },
+            timeout=90,
+        )
+        response.raise_for_status()
+        content = _clean_json(response.json()["choices"][0]["message"]["content"])
+        parsed = json.loads(content)
+        if not parsed.get("titre") or not parsed.get("contenu_markdown"):
+            return None
+        return parsed
+    except Exception as e:
+        print(f"[WARN] Erreur correction article '{article['titre']}' : {e}")
+        return None
+
+
 # ─────────────────────────────────────────────
 # ÉTAPE 3 : Vérification par l'Agent API Perplexity
 # ─────────────────────────────────────────────
@@ -409,6 +461,16 @@ def run(filtered: list[dict]) -> None:
             continue
 
         verdict = verify_article(article, story)
+
+        # Une seule passe de correction : Perplexity a déjà fait la recherche
+        # web et donne les faits corrects dans son verdict, donc Mistral
+        # corrige avec de vraies infos en main plutôt que de réessayer en aveugle.
+        if not verdict.get("approuve"):
+            revised = revise_article(article, verdict)
+            if revised is not None:
+                article = revised
+                verdict = verify_article(article, story)
+
         if verdict.get("approuve"):
             publish_article(article, story)
         else:
