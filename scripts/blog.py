@@ -193,12 +193,18 @@ Voici les articles sources sur ce sujet :
 {sources_text}
 
 Rédige un article explicatif en français de 500 à 700 mots :
-- Un titre accrocheur mais factuel (pas putaclic)
+- Un titre accrocheur mais factuel (pas putaclic, pas de superlatif du type "premier"/"record" sauf si une source l'affirme explicitement)
 - Une intro qui résume ce qui s'est passé
 - Une explication du contexte et des enjeux, accessible à un non-spécialiste (définis les termes techniques la première fois que tu les utilises)
-- Une conclusion sur pourquoi ça compte
+- Une conclusion qui reste factuelle
 
-Ne t'appuie QUE sur les informations fournies ci-dessus, n'invente aucun fait, chiffre ou citation. Le contenu doit être au format Markdown simple (titres ##, paragraphes, gras/italique si utile).
+Règles de précision, importantes :
+- Utilise le vocabulaire exact des sources (ex. si une source parle d'un "enregistrement", n'écris pas "licence" ; si elle parle d'une "filiale locale", n'écris pas "l'entreprise" au global).
+- Ne généralise pas au-delà de ce que dit la source (une annonce limitée à des clients institutionnels n'est pas une annonce grand public).
+- N'ajoute aucune conclusion, opinion ou extrapolation ("un pas vers...", "cela illustre la maturité de...") qui ne soit pas explicitement dans les sources.
+- Ne t'appuie QUE sur les informations fournies ci-dessus, n'invente aucun fait, chiffre ou citation.
+
+Le contenu doit être au format Markdown simple (titres ##, paragraphes, gras/italique si utile).
 
 Réponds UNIQUEMENT en JSON valide, sans texte avant ou après :
 {{
@@ -270,9 +276,19 @@ CONTENU :
 Sources originales citées par l'auteur :
 {sources_urls}
 
-Utilise ta recherche web pour vérifier chaque affirmation factuelle (dates, montants, noms, faits techniques) — ne te fie pas uniquement aux sources listées ci-dessus, elles peuvent elles-mêmes être erronées. Signale toute affirmation fausse, non vérifiable, ou qui va au-delà de ce que rapportent des sources fiables.
+Utilise ta recherche web pour vérifier les faits centraux de l'article (dates, montants, noms, ce qui s'est réellement passé) — ne te fie pas uniquement aux sources listées ci-dessus, elles peuvent elles-mêmes être erronées.
 
-Réponds avec "approuve" (true seulement si aucun problème factuel significatif n'est trouvé) et "problemes" (liste des problèmes trouvés, vide si aucun)."""
+Il s'agit d'un article grand public, pas d'un communiqué juridique : une certaine simplification de vocabulaire et de nuance est normale et attendue. Ne signale QUE :
+- une affirmation factuellement fausse (un fait, chiffre, date ou nom incorrect)
+- une confusion qui change le sens réel de l'événement (ex. présenter une annonce limitée à quelques clients comme s'adressant au grand public)
+- une exagération non étayée par les sources (ex. "le premier/la première" alors que ce n'est pas le cas)
+
+Ne signale PAS :
+- un vocabulaire simplifié mais qui ne trahit pas le sens (ex. "autorisation" à la place de "enregistrement réglementaire", si le sens général reste correct)
+- l'absence de détails secondaires ou d'exhaustivité
+- le style journalistique ou la mise en contexte, tant qu'ils ne contredisent pas les faits
+
+Réponds avec "approuve" (true si l'article est globalement fidèle aux faits même s'il n'est pas parfaitement exhaustif ; false seulement en cas de problème listé ci-dessus) et "problemes" (liste des problèmes trouvés, vide si aucun)."""
 
     try:
         # Suit le pattern documenté par le guide de migration Sonar -> Agent API
