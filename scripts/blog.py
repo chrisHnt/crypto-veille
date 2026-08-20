@@ -84,6 +84,18 @@ def _slugify(title: str) -> str:
     return slug.strip("-")[:80]
 
 
+def send_ntfy(title: str, message: str) -> None:
+    try:
+        httpx.post(
+            f"https://ntfy.sh/{NTFY_TOPIC}",
+            data=message.encode("utf-8"),
+            headers={"Title": title},
+            timeout=10,
+        )
+    except Exception as e:
+        print(f"[WARN] Erreur envoi notification ntfy : {e}")
+
+
 def _render_markdown(text: str) -> str:
     html = md_lib.markdown(text)
     return bleach.clean(html, tags=ALLOWED_HTML_TAGS, attributes=ALLOWED_HTML_ATTRS, strip=True)
@@ -101,7 +113,7 @@ def _plain_excerpt(markdown_text: str, length: int = 220) -> str:
 # ÉTAPE 1 : Regroupement par sujet
 # ─────────────────────────────────────────────
 
-def group_by_story(filtered: list[dict]) -> list[dict]:
+def group_by_story(filtered: list[dict]) -> list[dict] | None:
     """
     Regroupe les articles retenus par sujet réel (un hack couvert par 3 sources
     ne doit donner qu'un seul article de blog). Ne garde que les sujets jugés
@@ -166,7 +178,7 @@ Réponds UNIQUEMENT en JSON valide, sans texte avant ou après, sous cette forme
         parsed = json.loads(content)
     except Exception as e:
         print(f"[WARN] Erreur regroupement par sujet : {e}")
-        return []
+        return None  # échec technique, distinct d'une semaine sans sujet majeur ([])
 
     stories = []
     for sujet in parsed.get("sujets", []):
@@ -453,15 +465,7 @@ def reject_article(article: dict, story: dict, verdict: dict) -> None:
 
     (REJECTED_DIR / f"{slug}.md").write_text("\n".join(lines), encoding="utf-8")
 
-    try:
-        httpx.post(
-            f"https://ntfy.sh/{NTFY_TOPIC}",
-            data=f"Article rejeté : {article['titre']}\n{', '.join(problemes) or 'Raison inconnue'}".encode("utf-8"),
-            headers={"Title": "Blog crypto - article bloque"},
-            timeout=10,
-        )
-    except Exception as e:
-        print(f"[WARN] Erreur envoi notification ntfy : {e}")
+    send_ntfy("Blog crypto - article bloque", f"Article rejeté : {article['titre']}\n{', '.join(problemes) or 'Raison inconnue'}")
 
     print(f"[WARN] Article rejeté : {slug}")
 
@@ -472,6 +476,12 @@ def reject_article(article: dict, story: dict, verdict: dict) -> None:
 
 def run(filtered: list[dict]) -> None:
     stories = group_by_story(filtered)
+    if stories is None:
+        send_ntfy(
+            "Blog crypto - panne pipeline",
+            "Échec technique du regroupement par sujet (Mistral) — aucun article de blog cette semaine. Voir les logs GitHub Actions.",
+        )
+        return
     if not stories:
         print("[INFO] Aucun sujet majeur cette semaine, pas d'article de blog.")
         return
@@ -479,9 +489,12 @@ def run(filtered: list[dict]) -> None:
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     (DOCS_DIR / ".nojekyll").touch(exist_ok=True)
 
+    write_failures = 0
+
     for story in stories:
         article = write_article(story)
         if article is None:
+            write_failures += 1
             continue
 
         verdict = verify_article(article, story)
@@ -499,3 +512,17 @@ def run(filtered: list[dict]) -> None:
             publish_article(article, story)
         else:
             reject_article(article, story, verdict)
+
+    # Si TOUTES les rédactions échouent, c'est le signal typique d'une panne
+    # Perplexity (crédits épuisés, clé invalide, API en panne) plutôt que
+    # des échecs isolés — alerte dédiée, distincte des rejets normaux.
+    if write_failures > 0 and write_failures == len(stories):
+        send_ntfy(
+            "Blog crypto - panne Perplexity ?",
+            f"Échec de rédaction sur les {write_failures} sujet(s) traité(s) cette semaine — vérifier la clé API et le crédit Perplexity. Voir les logs GitHub Actions.",
+        )
+    elif write_failures > 0:
+        send_ntfy(
+            "Blog crypto - échecs partiels",
+            f"{write_failures} sujet(s) sur {len(stories)} n'ont pas pu être rédigés (erreur technique). Voir les logs GitHub Actions.",
+        )
