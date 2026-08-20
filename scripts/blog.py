@@ -78,6 +78,13 @@ def _clean_json(content: str) -> str:
     return content.strip()
 
 
+def _strip_citations(text: str) -> str:
+    """Retire les marqueurs de citation internes de Perplexity (ex. [web:3]) :
+    ils ne pointent vers rien de cliquable pour le lecteur, la vraie section
+    Sources en bas d'article suffit."""
+    return re.sub(r"\[web:\d+\]", "", text)
+
+
 def _slugify(title: str) -> str:
     slug = title.lower()
     slug = re.sub(r"[^a-z0-9]+", "-", slug)
@@ -274,6 +281,7 @@ Le contenu doit être au format Markdown simple (titres ##, paragraphes, gras/it
         parsed = json.loads(response.output_text)
         if not parsed.get("titre") or not parsed.get("contenu_markdown"):
             return None
+        parsed["contenu_markdown"] = _strip_citations(parsed["contenu_markdown"])
         return parsed
     except Exception as e:
         print(f"[WARN] Erreur rédaction article '{story['titre_sujet']}' : {e}")
@@ -326,6 +334,7 @@ Réponds UNIQUEMENT en JSON valide :
         parsed = json.loads(content)
         if not parsed.get("titre") or not parsed.get("contenu_markdown"):
             return None
+        parsed["contenu_markdown"] = _strip_citations(parsed["contenu_markdown"])
         return parsed
     except Exception as e:
         print(f"[WARN] Erreur correction article '{article['titre']}' : {e}")
