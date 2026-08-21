@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solana passe à des slots de 350 millisecondes, première étape vers 200 ms — Veille Crypto</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="back">&larr; Tous les articles</a>
+  </header>
+  <main>
+    <article>
+      <h1>Solana passe à des slots de 350 millisecondes, première étape vers 200 ms</h1>
+      <p class="meta">2026-08-21</p>
+      <p class="ai-notice">Chaque affirmation de cet article a été vérifiée fait par fait par une recherche web indépendante avant publication (rédaction assistée par IA) — voir <a href="../index.html#a-propos">notre méthode</a>.</p>
+      <h2>Solana passe à des slots de 350 millisecondes, première étape vers 200 ms</h2>
+<p>Solana a activé le 21 août 2026 la première réduction de la durée de ses <em>slots</em>, passée de 400 à 350 millisecondes. Cette modification, liée à la proposition technique SIMD-0525, constitue la première étape d’un déploiement en quatre phases dont la cible finale est fixée à 200 millisecondes. Jacob Creech, vice-président chargé de la technologie à la Solana Foundation, a présenté cette activation comme l’entrée du réseau dans une « nouvelle ère de 350 ms », avant d’indiquer que la prochaine étape serait 300 ms. </p>
+<h3>Un slot, c’est quoi ?</h3>
+<p>Sur Solana, un <em>slot</em> est une courte période pendant laquelle un validateur désigné peut produire un bloc, c’est-à-dire un ensemble de transactions proposé au réseau. La durée du slot détermine donc à quelle fréquence les occasions de produire des blocs se succèdent.</p>
+<p>Le réseau utilise actuellement 64 <em>ticks</em> — des unités de temps associées à la preuve d’historique de Solana — par slot. La réduction annoncée ne modifie pas ce nombre, ni la fenêtre de quatre slots attribuée successivement à un même producteur. En revanche, cette fenêtre est plus courte dans le temps réel : elle représente environ 1,6 seconde avec des slots de 400 ms, contre 1,4 seconde avec des slots de 350 ms. </p>
+<p>Le changement actuellement actif ne correspond donc pas encore à l’objectif de 200 ms. Le plan prévoit quatre diminutions distinctes : 400 à 350 ms, puis 350 à 300 ms, 300 à 250 ms et enfin 250 à 200 ms. Chaque étape dispose de son propre mécanisme d’activation et doit être déclenchée séparément. </p>
+<h3>Pourquoi réduire cette durée ?</h3>
+<p>L’objectif principal est de diminuer la latence : les blocs peuvent être proposés plus fréquemment et les confirmations liées aux slots peuvent être atteintes en moins de temps réel. Selon la documentation de Solana, le passage complet de 400 à 200 ms doit rendre le protocole plus compétitif sur le terrain de la latence et permettre aux utilisateurs de recevoir plus rapidement la confirmation de leurs transactions. </p>
+<p>Cette évolution peut aussi intéresser les applications qui réagissent à l’âge des données inscrites sur la blockchain. La proposition SIMD-0525 cite notamment les utilisateurs d’oracles — des services qui transmettent des données externes à une blockchain — ainsi que les <em>market makers</em> automatisés, qui ajustent leurs opérations en fonction de données de marché. Des intervalles plus courts leur donnent des repères temporels plus fins. </p>
+<p>La réduction ne signifie toutefois pas automatiquement que Solana pourra traiter deux fois plus de calculs en passant de 400 à 200 ms. Les limites de ressources par slot doivent être ajustées proportionnellement afin que la charge de traitement sur une période donnée n’augmente pas uniquement parce que davantage de slots sont produits. </p>
+<h3>Un déploiement progressif pour les validateurs</h3>
+<p>Les validateurs sont les ordinateurs qui rejouent les transactions, vérifient les blocs et votent sur leur validité. Avec des slots plus courts, ils disposent de moins de temps pour effectuer ces opérations avant le slot suivant. C’est pourquoi chaque réduction doit être activée séparément : les opérateurs peuvent observer le comportement du réseau et interrompre la progression si le taux de blocs manqués devient trop élevé. Le calendrier d’activation prévu pour le client Agave v4.2, développé par Anza, est explicitement présenté comme provisoire. </p>
+<p>Le nombre de slots par époque — une période de fonctionnement du réseau — doit rester fixé à 432 000. Les époques deviennent donc plus courtes en temps réel à mesure que les slots raccourcissent : environ 42 heures avec des slots de 350 ms, contre environ 48 heures à 400 ms. </p>
+<h3>Ce qui est acquis, et ce qui reste à venir</h3>
+<p>À la date du 21 août, la réduction à 350 ms est active. Les passages à 300, 250 puis 200 ms restent des étapes ultérieures, chacune nécessitant sa propre activation. Solana poursuit ainsi un déploiement graduel : le bénéfice immédiat porte sur la latence du réseau, tandis que la cible de 200 ms demeure l’aboutissement annoncé du programme, et non le réglage déjà appliqué. </p>
+      <section class="sources">
+        <h2>Sources</h2>
+        <ul>
+          
+          <li><a href="https://cointelegraph.com/news/solana-cuts-blockchain-slot-time-350-milliseconds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank" rel="noopener noreferrer">CoinTelegraph</a></li>
+          
+          <li><a href="https://decrypt.co/376245/solana-faster-bullish-sol-price" target="_blank" rel="noopener noreferrer">Decrypt</a></li>
+          
+        </ul>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <p>Article généré et vérifié automatiquement (Mistral + Perplexity).</p>
+    <p>Contenu sous licence <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" target="_blank" rel="noopener noreferrer">Creative Commons BY-NC 4.0</a> — réutilisation libre hors usage commercial, sous réserve de citer la source avec un lien.</p>
+  </footer>
+</body>
+</html>
